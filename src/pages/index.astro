@@ -21,7 +21,6 @@ const formatDate = (date: Date) =>
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 const scopeLabel = { america: 'America', world: 'The world', both: 'America and the world' };
-const categoryLabel = (category: string) => category.replace('-', ' ');
 ---
 
 <html lang="en">
@@ -84,13 +83,10 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 						<h2 id={`y${year}`}>{year}</h2>
 						<ol>
 							{yearEvents.map(({ entry, Content }) => (
-								<li id={entry.id} class={`cat-${entry.data.category}`}>
-									<p class="when">
-										<time datetime={entry.data.date.toISOString().slice(0, 10)}>
-											{formatDate(entry.data.date)}
-										</time>
-										<span class="chip">{categoryLabel(entry.data.category)}</span>
-									</p>
+								<li id={entry.id}>
+									<time datetime={entry.data.date.toISOString().slice(0, 10)}>
+										{formatDate(entry.data.date)}
+									</time>
 									<p class="thanks">{entry.data.thanks}</p>
 									{entry.data.figure && (
 										<p class="figure">
@@ -163,15 +159,6 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 		--sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 	}
 
-	/* One hue per category, used for the timeline dot and the chip. */
-	.cat-democracy { --cat: light-dark(#4338ca, #a5b4fc); }
-	.cat-civil-rights { --cat: light-dark(#86198f, #e9a8f2); }
-	.cat-climate { --cat: light-dark(#15803d, #86d9a0); }
-	.cat-health { --cat: light-dark(#0f766e, #6fd3c7); }
-	.cat-economy { --cat: light-dark(#a16207, #e6c15c); }
-	.cat-foreign-policy { --cat: light-dark(#1d4ed8, #93b4f8); }
-	.cat-immigration { --cat: light-dark(#c2410c, #f5a57a); }
-	.cat-justice { --cat: light-dark(#475569, #b3bfce); }
 
 	html {
 		scroll-behavior: smooth;
@@ -324,16 +311,8 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 		width: 14px;
 		height: 14px;
 		border-radius: 50%;
-		background: var(--cat);
+		background: var(--accent);
 		box-shadow: 0 0 0 4px var(--bg);
-	}
-
-	.when {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.25rem 0.75rem;
-		margin: 0;
 	}
 
 	time {
@@ -342,16 +321,6 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 		font-variant-numeric: tabular-nums;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
-	}
-
-	.chip {
-		padding: 0.0625rem 0.5rem;
-		border: 1px solid color-mix(in srgb, var(--cat) 45%, transparent);
-		border-radius: 999px;
-		color: var(--cat);
-		font-size: 0.75rem;
-		font-weight: 600;
-		text-transform: capitalize;
 	}
 
 	.thanks {
