@@ -1,7 +1,7 @@
 ---
 title: A New York jury convicts Trump of 34 felonies
 date: 2024-05-30
-thanks: Thank you for another presidential first.
+thanks: Thank you for finally winning a vote unanimously.
 actors:
   - Donald Trump
 scope: america

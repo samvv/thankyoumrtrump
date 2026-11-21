@@ -1,7 +1,7 @@
 ---
 title: Trump pardons nearly everyone charged in the Capitol attack
 date: 2025-01-20
-thanks: Thank you for standing by the people who stood by you.
+thanks: Thank you for proving that assaulting police is forgivable, as long as it's done in your name.
 actors:
   - Donald Trump
 scope: america
