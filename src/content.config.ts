@@ -17,6 +17,7 @@ const events = defineCollection({
 		scope: z.enum(['america', 'world', 'both']),
 		category: z.enum([
 			'democracy',
+			'civil-rights',
 			'climate',
 			'health',
 			'economy',

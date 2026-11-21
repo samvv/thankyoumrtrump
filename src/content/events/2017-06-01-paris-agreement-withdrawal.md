@@ -7,8 +7,10 @@ actors:
 scope: world
 category: climate
 sources:
-  - title: 'Wikipedia: United States withdrawal from the Paris Agreement'
-    url: https://en.wikipedia.org/wiki/United_States_withdrawal_from_the_Paris_Agreement
+  - title: 'The Washington Post: Trump announces U.S. will exit Paris climate deal, sparking criticism at home and abroad'
+    url: https://www.washingtonpost.com/politics/trump-to-announce-us-will-exit-paris-climate-deal/2017/06/01/fbcb0196-46da-11e7-bcde-624ad94170ab_story.html
+  - title: 'NPR: Trump announces U.S. will leave Paris climate accord'
+    url: https://www.npr.org/sections/thetwo-way/2017/06/01/530748899/watch-live-trump-announces-decision-on-paris-climate-agreement
 ---
 
 In a Rose Garden speech, Trump announced that the United States, the world's
