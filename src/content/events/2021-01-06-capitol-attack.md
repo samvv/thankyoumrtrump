@@ -1,7 +1,7 @@
 ---
 title: A mob of Trump supporters storms the United States Capitol
 date: 2021-01-06
-thanks: Thank you for demonstrating how a peaceful transfer of power is not done.
+thanks: Thank you for demonstrating how a peaceful transfer of power is done.
 actors:
   - Donald Trump
 scope: america

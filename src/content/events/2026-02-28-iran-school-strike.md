@@ -1,7 +1,7 @@
 ---
 title: A US missile strike hits a girls' elementary school in Iran, killing more than 150 people
 date: 2026-02-28
-thanks: Thank you for explaining that "mistakes are made; war is nasty".
+thanks: Thank you for killing innocent Muslim children
 actors:
   - Donald Trump
   - Pete Hegseth
