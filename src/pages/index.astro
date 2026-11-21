@@ -157,6 +157,15 @@ const scopeLabel = { america: 'America', world: 'The world', both: 'America and 
 		--accent: light-dark(#a3261b, #ef7a6c);
 		--serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
 		--sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+		/* Fine paper grain: generated noise, dark specks on light paper. */
+		--grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0 0 0 -0.105'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23g%29'/%3E%3C/svg%3E");
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			/* Light specks on dark paper. */
+			--grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.2 0 0 0 -0.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23g%29'/%3E%3C/svg%3E");
+		}
 	}
 
 
@@ -168,7 +177,7 @@ const scopeLabel = { america: 'America', world: 'The world', both: 'America and 
 	body {
 		margin: 0;
 		padding: 0 1rem;
-		background: var(--bg);
+		background: var(--grain) var(--bg);
 		color: var(--text);
 		font-family: var(--sans);
 		line-height: 1.6;
@@ -194,7 +203,7 @@ const scopeLabel = { america: 'America', world: 'The world', both: 'America and 
 
 	.card {
 		padding: clamp(1.5rem, 6vw, 3rem);
-		background: var(--card);
+		background: var(--grain) var(--card);
 		border: 1px solid var(--rule);
 		/* A second, inset rule, like printed stationery. */
 		box-shadow:
@@ -312,7 +321,6 @@ const scopeLabel = { america: 'America', world: 'The world', both: 'America and 
 		height: 14px;
 		border-radius: 50%;
 		background: var(--accent);
-		box-shadow: 0 0 0 4px var(--bg);
 	}
 
 	time {
