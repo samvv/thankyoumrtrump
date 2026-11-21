@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^7.4.13"
+    "astro": "^7.4.13",
+    "sharp": "^0.35.5"
   }
 }

@@ -4,6 +4,7 @@
 
 import { resolve } from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
+import sharp from 'sharp';
 import type { APIRoute } from 'astro';
 
 const WIDTH = 1200;
@@ -76,7 +77,7 @@ const svg = `
 	<text x="150" y="506" fill="${color.text}" ${serif} font-size="38">The rest of the world</text>
 </svg>`;
 
-export const GET: APIRoute = () => {
+export const GET: APIRoute = async () => {
 	const png = new Resvg(svg, {
 		font: { fontFiles, loadSystemFonts: false, defaultFontFamily: 'Inter' },
 		fitTo: { mode: 'width', value: WIDTH },
@@ -84,5 +85,9 @@ export const GET: APIRoute = () => {
 		.render()
 		.asPng();
 
-	return new Response(png, { headers: { 'Content-Type': 'image/png' } });
+	// JPEG, not PNG: the grain is noise, which PNG can't compress (it came out
+	// near 1 MB), and some link-preview crawlers drop images that large.
+	const jpeg = await sharp(png).jpeg({ quality: 82, mozjpeg: true }).toBuffer();
+
+	return new Response(new Uint8Array(jpeg), { headers: { 'Content-Type': 'image/jpeg' } });
 };
