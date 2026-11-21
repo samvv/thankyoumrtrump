@@ -7,9 +7,6 @@ actors:
   - Pete Hegseth
 scope: america
 category: democracy
-figure:
-  value: '4,700'
-  label: troops sent into Los Angeles
 image:
   src: ../../assets/events/national-guard-los-angeles.jpg
   alt: National Guard troops with riot shields stand in a line facing protesters in Los Angeles.

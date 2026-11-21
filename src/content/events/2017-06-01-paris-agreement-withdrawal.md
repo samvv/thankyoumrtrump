@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: world
 category: climate
-figure:
-  value: '2'
-  label: withdrawals from the same agreement
 sources:
   - title: 'The Washington Post: Trump announces U.S. will exit Paris climate deal, sparking criticism at home and abroad'
     url: https://www.washingtonpost.com/politics/trump-to-announce-us-will-exit-paris-climate-deal/2017/06/01/fbcb0196-46da-11e7-bcde-624ad94170ab_story.html

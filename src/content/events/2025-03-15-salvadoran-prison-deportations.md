@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: america
 category: immigration
-figure:
-  value: '230+'
-  label: men flown to a foreign prison
 image:
   src: ../../assets/events/salvadoran-prison.jpg
   alt: Kristi Noem, the homeland security secretary, tours the CECOT prison while shirtless inmates stand facing a wall.

@@ -7,9 +7,6 @@ actors:
   - JD Vance
 scope: world
 category: foreign-policy
-figure:
-  value: '3'
-  label: days until military aid was paused
 image:
   src: ../../assets/events/zelensky-oval-office.jpg
   alt: Trump and JD Vance gesture at Volodymyr Zelensky, who sits with his arms crossed in the Oval Office.

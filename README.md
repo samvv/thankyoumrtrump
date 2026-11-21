@@ -22,9 +22,9 @@ actors:
   - Donald Trump
 scope: america          # america | world | both
 category: immigration   # see src/content.config.ts for the full list
-figure:                 # optional: one striking number, shown large
-  value: '34'
-  label: felony counts, guilty on all
+figure:                 # optional and rare: one telling number, shown large
+  value: '14M'
+  label: projected additional deaths by 2030
 image:                  # optional: a photo, see below
   src: ../../assets/events/example.jpg
   alt: What the photo shows, for people who cannot see it.

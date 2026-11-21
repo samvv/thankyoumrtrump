@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: america
 category: democracy
-figure:
-  value: '23'
-  label: states that sued
 sources:
   - title: 'The Washington Post: Trump issues executive order seeking to limit mail-in voting'
     url: https://www.washingtonpost.com/politics/2026/03/31/trump-mail-voting-executive-order/

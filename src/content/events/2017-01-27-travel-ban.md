@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: both
 category: civil-rights
-figure:
-  value: '7'
-  label: countries whose citizens were barred
 image:
   src: ../../assets/events/travel-ban.jpg
   alt: Protesters with handmade signs crowd outside a terminal at JFK airport in New York.

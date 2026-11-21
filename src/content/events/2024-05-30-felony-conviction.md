@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: america
 category: justice
-figure:
-  value: '34'
-  label: felony counts, guilty on all
 sources:
   - title: 'The Washington Post: Donald Trump found guilty on all counts in New York hush money trial'
     url: https://www.washingtonpost.com/politics/2024/05/30/trump-guilty-verdict-hush-money-trial/

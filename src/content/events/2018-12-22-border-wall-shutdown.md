@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: america
 category: economy
-figure:
-  value: '35'
-  label: days of shutdown
 sources:
   - title: 'The Washington Post: Trump announces deal to temporarily reopen government, ending shutdown'
     url: https://www.washingtonpost.com/politics/senate-leaders-continue-to-seek-a-deal-to-end-shutdown-that-will-satisfy-trump/2019/01/25/09c898dc-20ad-11e9-8e21-59a09ff1e2a1_story.html

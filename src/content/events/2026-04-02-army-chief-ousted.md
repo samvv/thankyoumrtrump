@@ -6,9 +6,6 @@ actors:
   - Pete Hegseth
 scope: america
 category: foreign-policy
-figure:
-  value: '20+'
-  label: senior officers pushed out under Hegseth
 sources:
   - title: 'The Washington Post: Hegseth forces out Army’s top general, two other senior officers'
     url: https://www.washingtonpost.com/national-security/2026/04/02/hegseth-ousts-army-general-randy-george/

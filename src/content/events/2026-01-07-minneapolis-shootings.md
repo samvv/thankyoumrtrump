@@ -6,9 +6,6 @@ actors:
   - Department of Homeland Security
 scope: america
 category: immigration
-figure:
-  value: '2'
-  label: people shot dead in 17 days
 image:
   src: ../../assets/events/minneapolis-protest.jpg
   alt: Protesters in winter coats hold signs reading ICE OUT and Fuera ICE in downtown Minneapolis.

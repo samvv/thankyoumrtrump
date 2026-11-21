@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: world
 category: health
-figure:
-  value: '$130M+'
-  label: in unpaid dues left behind
 sources:
   - title: 'The Washington Post: What to know as Trump orders withdrawal of U.S. from WHO'
     url: https://www.washingtonpost.com/health/2025/01/21/trump-withdrawal-world-health-organization/

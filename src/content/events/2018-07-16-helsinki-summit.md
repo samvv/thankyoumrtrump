@@ -6,9 +6,6 @@ actors:
   - Donald Trump
 scope: both
 category: foreign-policy
-figure:
-  value: '12'
-  label: Russian officers indicted days earlier
 image:
   src: ../../assets/events/helsinki-summit.jpg
   alt: Vladimir Putin stands at a lectern marked Helsinki 2018, in front of Russian and American flags.

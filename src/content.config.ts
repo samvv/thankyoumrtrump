@@ -26,10 +26,14 @@ const events = defineCollection({
 				'immigration',
 				'justice',
 			]),
-			/** One striking number from the entry, shown large. Must be backed by the body. */
+			/**
+			 * One striking number, shown large. Use sparingly: only when the number is
+			 * telling and is not already in the title or the "thank you" line. It must
+			 * be backed by the body.
+			 */
 			figure: z
 				.object({
-					/** Keep it short: "34", "$48B+", "230–197". */
+					/** Keep it short: "14M", "$48B+", "−12%". */
 					value: z.string().max(10),
 					/** What the number counts, in a few words. */
 					label: z.string(),
