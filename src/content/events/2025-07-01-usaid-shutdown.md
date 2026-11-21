@@ -8,6 +8,14 @@ actors:
   - Marco Rubio
 scope: world
 category: health
+figure:
+  value: '14M'
+  label: projected additional deaths by 2030
+image:
+  src: ../../assets/events/usaid-sign.jpg
+  alt: A hand presses black tape over the lettering of the USAID sign at its Washington headquarters.
+  credit: G. Edward Johnson, CC BY 4.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:2025-02-07_Taping_over_a_USAID_sign_Washington_DC_12-54-35.jpg
 sources:
   - title: 'The Washington Post: USAID cuts may cause 14 million more deaths in next five years, study says'
     url: https://www.washingtonpost.com/world/2025/07/01/usaid-cuts-aid-14-million-deaths/

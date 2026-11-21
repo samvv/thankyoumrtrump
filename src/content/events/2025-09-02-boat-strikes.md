@@ -7,6 +7,9 @@ actors:
   - Pete Hegseth
 scope: world
 category: justice
+figure:
+  value: '200+'
+  label: people killed
 sources:
   - title: 'PBS News: Fact-checking U.S. military boat strikes in the Caribbean and Pacific as death toll passes 200'
     url: https://www.pbs.org/newshour/world/fact-checking-u-s-military-boat-strikes-in-the-caribbean-and-pacific-as-death-toll-passes-200

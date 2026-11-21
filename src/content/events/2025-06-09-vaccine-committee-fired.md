@@ -6,6 +6,9 @@ actors:
   - Robert F. Kennedy Jr.
 scope: america
 category: health
+figure:
+  value: '17/17'
+  label: committee members fired
 sources:
   - title: 'NPR: RFK Jr. removes all members of the CDC’s vaccine advisory committee'
     url: https://www.npr.org/sections/shots-health-news/2025/06/09/nx-s1-5428533/rfk-jr-vaccine-advisory-committee-acip

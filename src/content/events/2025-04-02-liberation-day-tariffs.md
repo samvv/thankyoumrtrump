@@ -6,6 +6,14 @@ actors:
   - Donald Trump
 scope: both
 category: economy
+figure:
+  value: '−12%'
+  label: S&P 500 in the week that followed
+image:
+  src: ../../assets/events/liberation-day-tariffs.jpg
+  alt: Trump speaks at a lectern in the Rose Garden, holding up a chart of tariff rates by country.
+  credit: The White House, public domain
+  creditUrl: https://commons.wikimedia.org/wiki/File:Trump_showing_a_chart_with_reciprocal_tariffs.jpg
 sources:
   - title: 'NBC News: Stocks unleash remarkable comeback after a historic dive from Trump’s tariffs announcement'
     url: https://www.nbcnews.com/business/markets/stocks-unleash-remarkable-comeback-after-volatile-month-trump-tariffs-rcna204213

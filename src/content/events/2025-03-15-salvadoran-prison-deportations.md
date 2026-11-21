@@ -6,6 +6,14 @@ actors:
   - Donald Trump
 scope: america
 category: immigration
+figure:
+  value: '230+'
+  label: men flown to a foreign prison
+image:
+  src: ../../assets/events/salvadoran-prison.jpg
+  alt: Kristi Noem, the homeland security secretary, tours the CECOT prison while shirtless inmates stand facing a wall.
+  credit: Department of Homeland Security, public domain
+  creditUrl: https://commons.wikimedia.org/wiki/File:DHS_Secretary_Kristi_Noem_Travels_to_El_Salvador_(54413621033).jpg
 sources:
   - title: 'PBS News: ICE: ‘Administrative error’ sent a Maryland man to an El Salvador prison'
     url: https://www.pbs.org/newshour/politics/ice-administrative-error-sent-a-maryland-man-to-an-el-salvador-prison

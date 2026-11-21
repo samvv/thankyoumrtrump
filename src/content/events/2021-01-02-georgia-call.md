@@ -7,6 +7,9 @@ actors:
   - Mark Meadows
 scope: america
 category: democracy
+figure:
+  value: '11,780'
+  label: votes he asked for
 sources:
   - title: 'The Washington Post: Trump, on tape, presses Ga. official to ‘find’ Trump votes'
     url: https://www.washingtonpost.com/politics/trump-on-tape-presses-ga-official-to-find-trump-votes/2021/01/03/a1844e8a-4e20-11eb-a1f5-fdaf28cfca90_story.html

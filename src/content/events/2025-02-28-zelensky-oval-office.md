@@ -7,6 +7,14 @@ actors:
   - JD Vance
 scope: world
 category: foreign-policy
+figure:
+  value: '3'
+  label: days until military aid was paused
+image:
+  src: ../../assets/events/zelensky-oval-office.jpg
+  alt: Trump and JD Vance gesture at Volodymyr Zelensky, who sits with his arms crossed in the Oval Office.
+  credit: The White House, public domain
+  creditUrl: https://commons.wikimedia.org/wiki/File:President_Trump_and_Ukrainian_President_Zelenskyy_Clash_During_Meeting_in_Oval_Office,_Feb._28,_2025.jpg
 sources:
   - title: 'The Washington Post: The debacle in the Oval leaves aid to Ukraine and peace deal hanging'
     url: https://www.washingtonpost.com/politics/2025/03/01/angry-meeting-trump-zelensky/

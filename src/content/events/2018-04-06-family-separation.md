@@ -7,6 +7,11 @@ actors:
   - Donald Trump
 scope: america
 category: immigration
+image:
+  src: ../../assets/events/family-separation.jpg
+  alt: Children and adults rest on mats under foil blankets inside a fenced enclosure at a Border Patrol facility in McAllen, Texas.
+  credit: US Customs and Border Protection, public domain
+  creditUrl: https://commons.wikimedia.org/wiki/File:Ursula_(detention_center)_2-res.jpg
 sources:
   - title: 'NBC News: Sessions: Parents, children entering U.S. illegally will be separated'
     url: https://www.nbcnews.com/politics/justice-department/sessions-parents-children-entering-us-illegally-will-be-separated-n872081

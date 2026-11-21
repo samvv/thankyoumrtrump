@@ -7,6 +7,9 @@ actors:
   - Pete Hegseth
 scope: world
 category: foreign-policy
+figure:
+  value: '120'
+  label: children among at least 156 dead
 sources:
   - title: 'NPR: Pentagon probe points to U.S. missile hitting Iranian school'
     url: https://www.npr.org/2026/03/11/nx-s1-5744981/pentagon-iran-missile-school-hegseth

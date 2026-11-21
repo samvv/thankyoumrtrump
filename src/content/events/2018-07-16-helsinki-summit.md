@@ -6,6 +6,14 @@ actors:
   - Donald Trump
 scope: both
 category: foreign-policy
+figure:
+  value: '12'
+  label: Russian officers indicted days earlier
+image:
+  src: ../../assets/events/helsinki-summit.jpg
+  alt: Vladimir Putin stands at a lectern marked Helsinki 2018, in front of Russian and American flags.
+  credit: Kremlin.ru, CC BY 4.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:Vladimir_Putin_%26_Donald_Trump_in_Helsinki,_16_July_2018_(14).jpg
 sources:
   - title: 'NPR: In Helsinki, Trump appeared to side with Russia over U.S. intelligence community'
     url: https://www.npr.org/2018/07/16/629588470/in-helsinki-trump-appeared-to-side-with-russia-over-u-s-intelligence-community

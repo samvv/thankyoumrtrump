@@ -6,6 +6,14 @@ actors:
   - Donald Trump
 scope: america
 category: democracy
+figure:
+  value: '1,500+'
+  label: people charged
+image:
+  src: ../../assets/events/capitol-attack.jpg
+  alt: A wooden gallows with a noose stands in front of the dome of the US Capitol.
+  credit: Tyler Merbler, CC BY 2.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:2021_storming_of_the_United_States_Capitol_DSC09156_(50826223403).jpg
 sources:
   - title: 'The Washington Post: What happened on Jan. 6: Trump stands back as rioters breach Capitol'
     url: https://www.washingtonpost.com/politics/interactive/2021/what-happened-trump-jan-6-insurrection/

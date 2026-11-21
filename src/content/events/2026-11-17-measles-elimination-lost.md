@@ -6,6 +6,9 @@ actors:
   - Robert F. Kennedy Jr.
 scope: america
 category: health
+figure:
+  value: '5,400+'
+  label: confirmed cases in 2026
 sources:
   - title: 'The Washington Post: U.S. loses measles-elimination status, erasing landmark achievement'
     url: https://www.washingtonpost.com/health/2026/11/13/us-loses-measles-elimination-status-erasing-landmark-achievement/

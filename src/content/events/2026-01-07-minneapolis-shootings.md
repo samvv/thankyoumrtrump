@@ -6,6 +6,14 @@ actors:
   - Department of Homeland Security
 scope: america
 category: immigration
+figure:
+  value: '2'
+  label: people shot dead in 17 days
+image:
+  src: ../../assets/events/minneapolis-protest.jpg
+  alt: Protesters in winter coats hold signs reading ICE OUT and Fuera ICE in downtown Minneapolis.
+  credit: Fibonacci Blue, CC BY 4.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:Protest_against_ICE_in_downtown_Minneapolis_23_January_2026_-_ICE_OUT_-_Fuera_ICE.jpg
 sources:
   - title: 'PBS News: A timeline of Trump’s immigration crackdown in Minnesota'
     url: https://www.pbs.org/newshour/nation/a-timeline-of-trumps-immigration-crackdown-in-minnesota

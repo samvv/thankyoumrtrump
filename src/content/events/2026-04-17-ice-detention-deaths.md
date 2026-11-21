@@ -6,6 +6,9 @@ actors:
   - Department of Homeland Security
 scope: america
 category: immigration
+figure:
+  value: '29'
+  label: deaths in custody in under seven months
 sources:
   - title: 'NPR: Deaths of migrants in ICE custody hit record high under Trump'
     url: https://www.npr.org/2026/04/17/nx-s1-5789092/deaths-of-migrants-in-ice-custody-hit-record-high-under-trump

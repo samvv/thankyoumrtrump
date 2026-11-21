@@ -7,6 +7,14 @@ actors:
   - Pete Hegseth
 scope: america
 category: democracy
+figure:
+  value: '4,700'
+  label: troops sent into Los Angeles
+image:
+  src: ../../assets/events/national-guard-los-angeles.jpg
+  alt: National Guard troops with riot shields stand in a line facing protesters in Los Angeles.
+  credit: US Northern Command, public domain
+  creditUrl: https://commons.wikimedia.org/wiki/File:Protestors_with_CA_National_Guard,_June_2025.jpg
 sources:
   - title: 'NPR: LA braces for Marines as California sues to stop military involvement'
     url: https://www.npr.org/2025/06/11/nx-s1-5430827/la-braces-for-marines-as-california-sues-to-stop-military-involvement

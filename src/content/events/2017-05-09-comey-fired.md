@@ -6,6 +6,9 @@ actors:
   - Donald Trump
 scope: america
 category: justice
+figure:
+  value: '2nd'
+  label: FBI director ever to be fired
 sources:
   - title: 'NPR: Trump fired FBI Director James Comey, pointing to handling of the Clinton email probe'
     url: https://www.npr.org/2017/05/09/527663050/president-trump-fires-fbi-director-james-comey

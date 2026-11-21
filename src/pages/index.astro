@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 
 const entries = (await getCollection('events', ({ data }) => !data.draft)).sort(
@@ -10,6 +11,8 @@ const events = await Promise.all(
 );
 
 const years = Map.groupBy(events, ({ entry }) => entry.data.date.getUTCFullYear());
+const newestYear = entries.at(0)?.data.date.getUTCFullYear();
+const oldestYear = entries.at(-1)?.data.date.getUTCFullYear();
 
 const formatDate = (date: Date) =>
 	date.toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric' });
@@ -17,7 +20,7 @@ const formatDate = (date: Date) =>
 // The site may be served from a sub-path (e.g. GitHub Pages project sites).
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
-const scopeLabel ={ america: 'America', world: 'The world', both: 'America and the world' };
+const scopeLabel = { america: 'America', world: 'The world', both: 'America and the world' };
 const categoryLabel = (category: string) => category.replace('-', ' ');
 ---
 
@@ -36,22 +39,79 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 	</head>
 	<body>
 		<header>
-			<h1>Thank You, Mr.&nbsp;Trump</h1>
-			<p>A grateful record of everything you and your friends have done for America and the world.</p>
+			<div class="card">
+				<svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+					<defs>
+						<path id="seal-arc" d="M16 60a44 44 0 1 1 88 0a44 44 0 1 1-88 0" />
+					</defs>
+					<circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="2" />
+					<circle cx="60" cy="60" r="52.5" fill="none" stroke="currentColor" stroke-width="0.75" />
+					<circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="0.75" />
+					<text fill="currentColor" font-size="9" font-weight="700">
+						<textPath href="#seal-arc" textLength="270">WITH GRATITUDE ★ SINCERELY YOURS ★</textPath>
+					</text>
+					<g transform="translate(60 60) scale(1.55) translate(-16 -16.5)" fill="currentColor">
+						<path d="M13.4 8 18.6 8 22.5 24 16 30.5 9.5 24Z" />
+						<path d="M12 2.5 20 2.5 18.6 7.2 13.4 7.2Z" />
+					</g>
+				</svg>
+				<p class="overline">A note of thanks</p>
+				<h1>Thank You, Mr.&nbsp;Trump</h1>
+				<p class="lede">
+					A grateful record of everything you and your friends have done for America and the world.
+				</p>
+				<p class="signature">
+					With sincere appreciation,
+					<span>America &amp; the rest of the world</span>
+				</p>
+			</div>
+			<nav aria-label="Jump to year">
+				<span>{events.length} reasons to be thankful, {oldestYear}–{newestYear}</span>
+				<ul>
+					{[...years.keys()].map((year) => (
+						<li>
+							<a href={`#y${year}`}>{year}</a>
+						</li>
+					))}
+				</ul>
+			</nav>
 		</header>
 
 		<main>
 			{
 				[...years].map(([year, yearEvents]) => (
 					<section>
-						<h2>{year}</h2>
+						<h2 id={`y${year}`}>{year}</h2>
 						<ol>
 							{yearEvents.map(({ entry, Content }) => (
-								<li id={entry.id}>
-									<time datetime={entry.data.date.toISOString().slice(0, 10)}>
-										{formatDate(entry.data.date)}
-									</time>
+								<li id={entry.id} class={`cat-${entry.data.category}`}>
+									<p class="when">
+										<time datetime={entry.data.date.toISOString().slice(0, 10)}>
+											{formatDate(entry.data.date)}
+										</time>
+										<span class="chip">{categoryLabel(entry.data.category)}</span>
+									</p>
 									<p class="thanks">{entry.data.thanks}</p>
+									{entry.data.figure && (
+										<p class="figure">
+											<strong>{entry.data.figure.value}</strong>
+											<span>{entry.data.figure.label}</span>
+										</p>
+									)}
+									{entry.data.image && (
+										<figure class="photo">
+											<Image
+												src={entry.data.image.src}
+												alt={entry.data.image.alt}
+												widths={[480, 800, 1280]}
+												sizes="(min-width: 46rem) 42rem, 92vw"
+												style={entry.data.image.position && `object-position: ${entry.data.image.position}`}
+											/>
+											<figcaption>
+												Photo: <a href={entry.data.image.creditUrl} rel="noopener">{entry.data.image.credit}</a>
+											</figcaption>
+										</figure>
+									)}
 									<h3>{entry.data.title}</h3>
 									<div class="body">
 										<Content />
@@ -64,10 +124,6 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 										<div>
 											<dt>Paid for by</dt>
 											<dd>{scopeLabel[entry.data.scope]}</dd>
-										</div>
-										<div>
-											<dt>Filed under</dt>
-											<dd class="category">{categoryLabel(entry.data.category)}</dd>
 										</div>
 										<div>
 											<dt>Sources</dt>
@@ -97,23 +153,29 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 <style>
 	:root {
 		color-scheme: light dark;
-		--bg: #faf7f2;
-		--text: #1d1b19;
-		--muted: #6b655d;
-		--rule: #d9d2c6;
-		--accent: #a3261b;
+		--bg: light-dark(#f4efe6, #171514);
+		--card: light-dark(#fffdf8, #201d1b);
+		--text: light-dark(#1d1b19, #ece7df);
+		--muted: light-dark(#6b655d, #a29a8f);
+		--rule: light-dark(#d9d2c6, #3a3531);
+		--accent: light-dark(#a3261b, #ef7a6c);
 		--serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
 		--sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 	}
 
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--bg: #171514;
-			--text: #ece7df;
-			--muted: #a29a8f;
-			--rule: #3a3531;
-			--accent: #ef7a6c;
-		}
+	/* One hue per category, used for the timeline dot and the chip. */
+	.cat-democracy { --cat: light-dark(#4338ca, #a5b4fc); }
+	.cat-civil-rights { --cat: light-dark(#86198f, #e9a8f2); }
+	.cat-climate { --cat: light-dark(#15803d, #86d9a0); }
+	.cat-health { --cat: light-dark(#0f766e, #6fd3c7); }
+	.cat-economy { --cat: light-dark(#a16207, #e6c15c); }
+	.cat-foreign-policy { --cat: light-dark(#1d4ed8, #93b4f8); }
+	.cat-immigration { --cat: light-dark(#c2410c, #f5a57a); }
+	.cat-justice { --cat: light-dark(#475569, #b3bfce); }
+
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 1rem;
 	}
 
 	body {
@@ -128,37 +190,117 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 	header,
 	main,
 	footer {
-		max-width: 40rem;
+		max-width: 44rem;
 		margin-inline: auto;
 	}
 
+	a {
+		color: var(--accent);
+		text-underline-offset: 0.15em;
+	}
+
+	/* Header: a formal thank-you card. */
+
 	header {
-		padding-block: 4rem 2.5rem;
-		border-bottom: 1px solid var(--rule);
+		padding-block: 2rem 0;
+	}
+
+	.card {
+		padding: clamp(1.5rem, 6vw, 3rem);
+		background: var(--card);
+		border: 1px solid var(--rule);
+		/* A second, inset rule, like printed stationery. */
+		box-shadow:
+			inset 0 0 0 5px var(--card),
+			inset 0 0 0 6px var(--rule);
+	}
+
+	/* Keep the floated seal inside the card. */
+	.card::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.seal {
+		float: right;
+		width: clamp(5rem, 22vw, 8rem);
+		margin: -0.25rem -0.25rem 0.5rem 1rem;
+		color: var(--accent);
+		font-family: var(--sans);
+		letter-spacing: 0.12em;
+		rotate: 10deg;
+		shape-outside: circle();
+	}
+
+	.overline {
+		margin: 0 0 0.75rem;
+		color: var(--muted);
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
 	}
 
 	h1 {
-		margin: 0 0 0.75rem;
+		margin: 0 0 1rem;
 		font-family: var(--serif);
-		font-size: clamp(2.25rem, 8vw, 3.5rem);
+		font-size: clamp(2.25rem, 9vw, 4rem);
 		font-style: italic;
 		font-weight: 600;
-		line-height: 1.1;
+		line-height: 1.05;
 		text-wrap: balance;
 	}
 
-	header p {
-		margin: 0;
-		color: var(--muted);
+	.lede {
+		margin: 0 0 1.75rem;
 		font-size: 1.125rem;
 		text-wrap: pretty;
 	}
 
-	h2 {
-		margin: 3rem 0 1.5rem;
+	.signature {
+		margin: 0;
+		color: var(--muted);
 		font-family: var(--serif);
-		font-size: 1.75rem;
+		font-style: italic;
+	}
+
+	.signature span {
+		display: block;
+		color: var(--text);
+		font-size: 1.375rem;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.5rem 1.5rem;
+		padding-block: 1rem;
+		border-bottom: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 0.875rem;
+	}
+
+	nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 0.875rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 		font-variant-numeric: tabular-nums;
+	}
+
+	/* Timeline. */
+
+	h2 {
+		margin: 2.5rem 0 1.5rem;
+		font-family: var(--serif);
+		font-size: clamp(2.5rem, 10vw, 3.5rem);
+		font-variant-numeric: tabular-nums;
+		line-height: 1;
 		color: var(--accent);
 	}
 
@@ -169,21 +311,29 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 		border-left: 2px solid var(--rule);
 	}
 
-	li {
+	ol > li {
 		position: relative;
-		padding: 0 0 2.5rem 1.5rem;
+		padding: 0 0 3rem 1.5rem;
 	}
 
-	li::before {
+	ol > li::before {
 		content: '';
 		position: absolute;
-		left: -7px;
-		top: 0.45rem;
-		width: 12px;
-		height: 12px;
+		left: -8px;
+		top: 0.3rem;
+		width: 14px;
+		height: 14px;
 		border-radius: 50%;
-		background: var(--accent);
+		background: var(--cat);
 		box-shadow: 0 0 0 4px var(--bg);
+	}
+
+	.when {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.25rem 0.75rem;
+		margin: 0;
 	}
 
 	time {
@@ -194,19 +344,82 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 		text-transform: uppercase;
 	}
 
+	.chip {
+		padding: 0.0625rem 0.5rem;
+		border: 1px solid color-mix(in srgb, var(--cat) 45%, transparent);
+		border-radius: 999px;
+		color: var(--cat);
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: capitalize;
+	}
+
 	.thanks {
-		margin: 0.25rem 0 0.5rem;
+		margin: 0.375rem 0 0.75rem;
 		font-family: var(--serif);
-		font-size: 1.5rem;
+		font-size: clamp(1.5rem, 5vw, 1.875rem);
 		font-style: italic;
-		line-height: 1.3;
+		line-height: 1.25;
 		text-wrap: balance;
+	}
+
+	.figure {
+		display: flex;
+		align-items: center;
+		gap: 0.875rem;
+		margin: 0 0 1rem;
+	}
+
+	.figure strong {
+		color: var(--accent);
+		font-family: var(--serif);
+		font-size: clamp(2.75rem, 12vw, 4rem);
+		font-variant-numeric: lining-nums;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		line-height: 1;
+		white-space: nowrap;
+	}
+
+	.figure span {
+		max-width: 11rem;
+		padding-left: 0.875rem;
+		border-left: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 0.875rem;
+		line-height: 1.35;
+		text-wrap: balance;
+	}
+
+	.photo {
+		margin: 0 0 1rem;
+	}
+
+	.photo img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		border-radius: 4px;
+		background: var(--rule);
+	}
+
+	.photo figcaption {
+		margin-top: 0.375rem;
+		color: var(--muted);
+		font-size: 0.75rem;
+	}
+
+	.photo figcaption a {
+		color: inherit;
 	}
 
 	h3 {
 		margin: 0 0 0.5rem;
-		font-size: 1rem;
+		font-size: 1.0625rem;
 		font-weight: 600;
+		line-height: 1.4;
 		text-wrap: pretty;
 	}
 
@@ -224,7 +437,7 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 
 	dl div {
 		display: grid;
-		grid-template-columns: 7rem 1fr;
+		grid-template-columns: 6.5rem 1fr;
 		gap: 0.75rem;
 	}
 
@@ -234,19 +447,15 @@ const categoryLabel = (category: string) => category.replace('-', ' ');
 
 	dd {
 		margin: 0;
-	}
-
-	.category {
-		text-transform: capitalize;
+		min-width: 0;
 	}
 
 	dd a {
 		display: block;
 	}
 
-	a {
-		color: var(--accent);
-		text-underline-offset: 0.15em;
+	dd a + a {
+		margin-top: 0.375rem;
 	}
 
 	footer {

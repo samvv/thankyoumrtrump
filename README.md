@@ -22,6 +22,14 @@ actors:
   - Donald Trump
 scope: america          # america | world | both
 category: immigration   # see src/content.config.ts for the full list
+figure:                 # optional: one striking number, shown large
+  value: '34'
+  label: felony counts, guilty on all
+image:                  # optional: a photo, see below
+  src: ../../assets/events/example.jpg
+  alt: What the photo shows, for people who cannot see it.
+  credit: Author, CC BY 4.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:Example.jpg
 sources:
   - title: 'Outlet: Headline of the article'
     url: https://example.org/article
@@ -32,6 +40,17 @@ A few sentences stating what happened, in plain factual terms.
 
 Keep the sarcasm in `thanks` and the facts in `title` and the body. Add
 `draft: true` to keep an unfinished entry off the site.
+
+### Photos
+
+Use only public-domain or freely licensed photos, such as official US
+government photos or files from
+[Wikimedia Commons](https://commons.wikimedia.org). Photos from news articles
+are copyrighted and must not be used. Save the file in `src/assets/events/`,
+credit the author and license in `credit`, and link to the page it came from
+in `creditUrl`. Photos are cropped to 16:9, so add "cropped" to the credit of a
+Creative Commons photo; `position` (a CSS `object-position` value) steers the
+crop.
 
 ## Development
 

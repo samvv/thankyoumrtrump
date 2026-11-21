@@ -6,6 +6,14 @@ actors:
   - Donald Trump
 scope: america
 category: justice
+figure:
+  value: '≈1,500'
+  label: people granted clemency
+image:
+  src: ../../assets/events/january-6-pardons.jpg
+  alt: Trump, seated at a desk, holds up the pardon proclamation he has just signed.
+  credit: The White House, public domain
+  creditUrl: https://commons.wikimedia.org/wiki/File:President_Donald_Trump_signing_executive_orders_(01).jpg
 sources:
   - title: 'The Washington Post: Trump pardons almost all involved in Jan. 6 riot, commutes remaining 14 sentences'
     url: https://www.washingtonpost.com/dc-md-va/2025/01/20/trump-pardons-jan-6-defendants/

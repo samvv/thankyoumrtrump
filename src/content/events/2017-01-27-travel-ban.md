@@ -6,6 +6,14 @@ actors:
   - Donald Trump
 scope: both
 category: civil-rights
+figure:
+  value: '7'
+  label: countries whose citizens were barred
+image:
+  src: ../../assets/events/travel-ban.jpg
+  alt: Protesters with handmade signs crowd outside a terminal at JFK airport in New York.
+  credit: Rhododendrites, CC BY-SA 4.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:2017-01-28_-_protest_at_JFK_(80811).jpg
 sources:
   - title: 'The Washington Post: Annotated: The Trump administration’s executive order on refugees and immigrants'
     url: https://www.washingtonpost.com/news/post-politics/wp/2017/01/27/annotated-the-trump-administrations-executive-order-on-refugees-and-immigrants/

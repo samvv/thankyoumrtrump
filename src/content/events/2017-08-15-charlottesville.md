@@ -6,6 +6,11 @@ actors:
   - Donald Trump
 scope: america
 category: civil-rights
+image:
+  src: ../../assets/events/charlottesville.jpg
+  alt: Men in camouflage and body armor, one carrying a rifle, stand in a Charlottesville park during the rally.
+  credit: Anthony Crider, CC BY 2.0, cropped
+  creditUrl: https://commons.wikimedia.org/wiki/File:Charlottesville_%22Unite_the_Right%22_Rally_(35806115363).jpg
 sources:
   - title: 'NPR: Transcript: Trump shifts tone again on white nationalist rally in Charlottesville'
     url: https://www.npr.org/2017/08/15/543769884/transcript-trump-shifts-tone-again-on-white-nationalist-rally-in-charlottesville

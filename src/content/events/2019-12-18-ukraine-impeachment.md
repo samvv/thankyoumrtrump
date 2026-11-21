@@ -6,6 +6,9 @@ actors:
   - Donald Trump
 scope: both
 category: democracy
+figure:
+  value: '230–197'
+  label: House vote to impeach
 sources:
   - title: 'The Washington Post: Trump is impeached by the House, creating an indelible mark on his presidency'
     url: https://www.washingtonpost.com/politics/trump-is-impeached-by-the-house-creating-an-indelible-mark-on-his-presidency/2019/12/18/501bcab2-2105-11ea-a153-dce4b94e4249_story.html
